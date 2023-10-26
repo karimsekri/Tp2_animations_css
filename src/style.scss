@@ -1,4 +1,4 @@
-
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
 
 * {
   box-sizing: border-box;
@@ -7,11 +7,12 @@
 }
 
 html, body {
+  font-size: 16px;
   height: 100%;
   width: 100%;
 }
 
-.app {  
+#app {  
   height: 100%;
   margin: auto;
 }
@@ -23,6 +24,7 @@ html, body {
   align-items: center;
   height: 100%;
   width: 100%;
+  border : solid 5px black;
 }
 
 .boiteCarree{
@@ -42,6 +44,15 @@ html, body {
   
 }
 
+.texte{
+  // border : solid 5px blue;
+  font-family:'Roboto', sans-serif;
+  font-size: 2.5rem;
+  animation: my-animation-texte 1s linear infinite;
+}
+div.texte:hover{
+  animation: my-animation-texte-souris 1s linear 1;
+}
 
 @keyframes my-animation {
   0% {
@@ -50,4 +61,21 @@ html, body {
   100% {
     transform: rotate(360deg);
   }
+}
+
+@keyframes my-animation-texte {
+  0% {
+    transform: scale(1,1);
+    color:red;
+  }
+  100% {
+    transform: scale(2,2);
+    color: blue;
+  } 
+}
+
+@keyframes my-animation-texte-souris {
+  0% {
+    transform: rotate(360deg);
+  }  
 }

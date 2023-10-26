@@ -48,10 +48,40 @@ html, body {
   // border : solid 5px blue;
   font-family:'Roboto', sans-serif;
   font-size: 2.5rem;
+  color: red;
   animation: my-animation-texte 1s linear infinite;
 }
 div.texte:hover{
   animation: my-animation-texte-souris 1s linear 1;
+}
+
+.heart{
+  width: 100px;
+  height: 90px;
+  position: relative;
+  animation: my-animation-heart 1s linear infinite;
+}
+
+.heart__left{
+  position: absolute;
+  width: 50px;
+  height: 80px;
+  background-color: red;
+  border-radius: 50% 50% 0 0;
+  top: 0px;
+  left : 42px;
+  transform: rotate(45deg);
+}
+
+.heart__right{
+  position: absolute;
+  width: 50px;
+  height: 80px;
+  background-color: red;
+  border-radius: 50% 50% 0 0;
+  top: 0px;
+  left : 20px;
+  transform: rotate(-45deg);
 }
 
 @keyframes my-animation {
@@ -64,18 +94,40 @@ div.texte:hover{
 }
 
 @keyframes my-animation-texte {
-  0% {
-    transform: scale(1,1);
-    color:red;
-  }
-  100% {
+
+  50% {
     transform: scale(2,2);
     color: blue;
   } 
+
 }
 
 @keyframes my-animation-texte-souris {
   0% {
     transform: rotate(360deg);
   }  
+}
+
+
+@keyframes my-animation-heart {
+  0% {
+    transform: translate(0,0);
+    transform: scale(1,1);
+  } 
+  25% {
+    translate : 0px -200px;
+    transform: scale(2,2);
+  }
+  50% {
+    translate : -200px -200px;
+    transform: scale(1,1);
+  }
+  75% {
+    translate : 200px -200px;
+    transform: scale(2,2);
+  }
+  100% {
+    translate : 0px -200px;
+    transform: scale(1,1);
+  } 
 }
